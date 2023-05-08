@@ -3,16 +3,17 @@ $(document).ready(function() {
   initFixedHeader();
   initHeaderSearch();
   initMobileNav();
-  initAnchorMenu();
   initSlickSlider();
+  initSlickSlider2();
   initFullInputUserForm();
+  initCountAnimate();
 
 
 
 
 
 
-
+  initAnchorMenu();
   initAccordion();
 });
 
@@ -50,65 +51,32 @@ function initMobileNav(){
     return false;
   });
 };
-function initAnchorMenu() {
-  $(".navigation-menu").on("click","a", function (event) {
-    event.preventDefault();
-    var id  = $(this).attr('href'),
-     top = $(id).offset().top - 185;
-      if($(this).parent().hasClass('active')){
-       return false;
-     }
-     $('.navigation-menu li').removeClass('active');
-     $(this).parent().addClass('active');
-    $('body,html').animate({scrollTop: top}, 1000);
-  });
-  $(window).scroll(function(){
-    var $sections = $('section');
-    $sections.each(function(i,el){
-    var top  = $(el).offset().top - 185;
-    var bottom = top +$(el).height();
-    var scroll = $(window).scrollTop();
-    var id = $(el).attr('id');
-      if( scroll > top && scroll < bottom){
-        $('a.active').removeClass('active');
-        $('a[href="#'+id+'"]').addClass('active');
-      }
-    })
-  });
-}
 function initSlickSlider() {
   $('.partners-slider').slick({
-    slidesToShow: 5,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    speed: 8000,
     arrows: false,
     dots: false,
     centerMode: true,
     variableWidth: true,
     autoplay: true,
-    autoplaySpeed: 3000,
-    responsive: [
-      {
-        breakpoint: 1399,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 479,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    autoplaySpeed: 0,
+    cssEase: 'linear'
+  });
+}
+function initSlickSlider2() {
+  $('.stock-ticker-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 15000,
+    arrows: false,
+    dots: false,
+    centerMode: true,
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: 'linear'
   });
 }
 function initFullInputUserForm(){
@@ -140,6 +108,32 @@ function initFullInputUserForm(){
     }
   });
 };
+function initCountAnimate(){
+  var _flag = true;
+  if (!$(".numeric").is('ul')) {
+    return;
+  }
+  $(window).on('scroll touchend', function() {
+    if ($('.numeric').offset().top < $(window).scrollTop() + $(window).height() / 1.5) {
+      $('.numeric .cost').each(function(i, elem) {
+        var _self = elem;
+        if (_flag == true) {
+          $({
+            n: 0
+          }).stop(true, true).animate({
+            n: parseInt($(_self).data('max'))
+          }, {
+            duration: 1200,
+            step: function(a) {
+              $(_self).html(a | 0);
+            }
+          });
+        }
+      });
+      _flag = false;
+    }
+  });
+};
 
 
 
@@ -160,8 +154,32 @@ function initFullInputUserForm(){
 
 
 
-
-
+function initAnchorMenu() {
+  $(".navigation-menu").on("click","a", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+     top = $(id).offset().top - 185;
+      if($(this).parent().hasClass('active')){
+       return false;
+     }
+     $('.navigation-menu li').removeClass('active');
+     $(this).parent().addClass('active');
+    $('body,html').animate({scrollTop: top}, 1000);
+  });
+  $(window).scroll(function(){
+    var $sections = $('section');
+    $sections.each(function(i,el){
+    var top  = $(el).offset().top - 185;
+    var bottom = top +$(el).height();
+    var scroll = $(window).scrollTop();
+    var id = $(el).attr('id');
+      if( scroll > top && scroll < bottom){
+        $('a.active').removeClass('active');
+        $('a[href="#'+id+'"]').addClass('active');
+      }
+    })
+  });
+}
 function initAccordion(){
   $('.accordion .opener').on('click', function() {
     if($(this).closest('li').hasClass('active')){
