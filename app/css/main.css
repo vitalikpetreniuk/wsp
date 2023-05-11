@@ -197,7 +197,7 @@ textarea{
   border-radius: 0;
   padding: 0.4em 0.7em;
   transition: .3s;
-  cursor: default;
+  cursor: auto;
 }
 textarea{
   vertical-align: top;
@@ -235,6 +235,17 @@ input:-webkit-autofill {
   -webkit-box-shadow: inset 0 0 0 50px #fff !important;
   -webkit-text-fill-color: #2D3646 !important;
   color: #2D3646 !important;
+}
+.contacts-section .user-form input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 50px #5A6570 !important;
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
+}
+.user-form.light-gray input:-webkit-autofill, 
+.user-form.light-gray textarea:-webkit-autofill{
+  -webkit-box-shadow: inset 0 0 0 50px #f3f3f3 !important;
+  -webkit-text-fill-color: inherit !important;
+  color: inherit !important;
 }
 .form-search input{
   -webkit-appearance: none;
@@ -582,7 +593,7 @@ small{
   z-index: 65;
 }
 #nav.active .mob-btn{
-  top: 50px;
+  top: 40px;
   right: 15px;
   background: url(../img/icon-menu-clouse.svg) no-repeat;
   background-size: 100%;
@@ -757,6 +768,7 @@ section{
 .image-text-section .text-block{
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .image-text-section .text-block .text{
   max-width: 573px;
@@ -1037,6 +1049,7 @@ section{
   width: 100%;
   font: normal 14px/18px PTSans;
   letter-spacing: 0.01em;
+  cursor: auto;
   transition: .3s;
 }
 .user-form input:focus ~ label,
@@ -1265,6 +1278,12 @@ section{
 }
 .about-team-info .image-block .text p{
   margin: 0;
+}
+.about-team-info .image-block a{
+  text-decoration: none;
+}
+.about-team-info .image-block a:hover{
+  color: #000;
 }
 .about-team-info h1{
   font: normal 60px/62px ArgentCF;
@@ -3179,6 +3198,9 @@ section{
   .email-form .title{
     margin: 0 0 25px;
   }
+  .user-form.contacts .btn{
+    min-width: 156px;
+  }
 }
 @media (max-width: 767px) {
   .mobile{
@@ -3204,9 +3226,18 @@ section{
   #header.sticky + #main {
     padding-top: 60px;
   }
+  #nav .nav-open-drop{
+    top: 83px;
+  }
   .nav-open-drop .top-bar{
     justify-content: center;
     padding-bottom: 50px;
+  }
+  #header.sticky #nav .nav-open-drop {
+    top: 58px;
+  }
+  #header.sticky #nav.active .mob-btn {
+    top: 29px;
   }
   .form-search .search{
     top: 100%;
@@ -3366,7 +3397,6 @@ section{
     width: 100%;
   }
   .user-form.contacts .button{
-    text-align: center;
     margin: 0;
   }
   .blog-list {
@@ -3497,7 +3527,11 @@ section{
     height: auto;
   }
   .about-team-info h1{
-    line-height: 50px;
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .about-team-info .specialist{
+    font-size: 28px;
   }
   .press-list .press-logo{
     width: 48%;
