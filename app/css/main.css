@@ -635,7 +635,8 @@ section{
   height: 100%;
   object-fit: cover;
 }
-.promo-section .text-block{
+.promo-section .text-block,
+.image-text-section.image-right .text-block{
   width: 100%;
   max-width: 1630px;
   padding: 0 15px;
@@ -765,14 +766,8 @@ section{
 .image-text-section .image{
   height: 906px;
 }
-.image-text-section .text-block{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .image-text-section .text-block .text{
   max-width: 573px;
-  margin: 0 49px;
 }
 .image-text-section p a{
   color: inherit;
@@ -783,12 +778,10 @@ section{
 }
 .image-text-section.image-right .image{
   height: 998px;
+  margin: 0 0 0 auto;
 }
 .image-text-section.image-right .text-block{
   order: -1;
-}
-.image-text-section.image-right .text-block .text{
-  margin-left: 116px;
 }
 .services-section,
 .services-work-section{
@@ -1371,7 +1364,7 @@ section{
 }
 .about-section .image-text-section .text-block .text{
   max-width: 600px;
-  margin: -5px 23px 0;
+  margin: -5px 0 0;
 }
 .about-section .image-text-section .btn{
   min-width: 194px;
@@ -2276,10 +2269,6 @@ section{
 .image-text-section.requirements .image{
   height: 787px;
 }
-.image-text-section.requirements .text-block .text {
-  margin: 0 65px 15px;
-  margin-left: 160px;
-}
 .image-text-section.requirements .sub-title{
   margin: 0 0 4px;
 }
@@ -2548,7 +2537,8 @@ section{
   }
 }
 @media (max-width: 1629px) {
-  .promo-section .text-block{
+  .promo-section .text-block,
+  .image-text-section.image-right .text-block{
     position: static;
     width: 49%;
     order: -1;
@@ -2580,9 +2570,6 @@ section{
   }
   .services-list .title{
     font-size: 28px;
-  }
-  .image-text-section.image-right .text-block .text{
-    margin-left: 49px;
   }
   .box-front{
     padding: 37px 15px 30px 30px;
@@ -2680,13 +2667,6 @@ section{
   .image-text-section .image,
   .image-text-section.resources .image{
     height: 780px;
-  }
-  .image-text-section .text-block .text,
-  .about-section .image-text-section .text-block .text{
-    margin: 0 15px 0 0;
-  }
-  .image-text-section.image-right .text-block .text{
-    margin: 0 0 0 15px;
   }
   .image-text-section.image-right .image {
     height: 810px;
@@ -3288,6 +3268,7 @@ section{
   .promo-section .text-block,
   .image-text-section .text-block,
   .image-text-section.image-right .text-block{
+    width: 100%;
     padding: 50px 15px;
     order: 0;
   }
