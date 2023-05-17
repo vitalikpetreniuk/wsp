@@ -285,7 +285,7 @@ input:-webkit-autofill {
   overflow: hidden;
 }
 .holder{
-  max-width: 1382px;
+  max-width: 1630px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -611,7 +611,7 @@ small{
   padding-top: 130px;
 }
 #main{
-  margin: 0 0 461px;
+  margin: 0 0 500px;
   padding-top: 175px;
   position: relative;
   transition: .2s;
@@ -626,6 +626,7 @@ section{
 .promo-section .image{
   width: 51%;
   height: 760px;
+  margin: 0 0 0 auto;
   position: relative;
 }
 .promo-section .image img,
@@ -635,11 +636,13 @@ section{
   object-fit: cover;
 }
 .promo-section .text-block{
-  width: 49%;
-  order: -1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  max-width: 1630px;
+  padding: 0 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .promo-section .text-block .text{
   max-width: 560px;
@@ -679,9 +682,6 @@ section{
   width: 56.5%;
   height: 625px;
 }
-.index-promo-section .text-block{
-  width: 43.5%;
-}
 .index-promo-section .text-block .text{
   max-width: 500px;
 }
@@ -689,7 +689,7 @@ section{
   padding: 0 0 9px;
 }
 .about-promo-section .text-block .text{
-  margin: -96px 0 0 -20px;
+  margin: -96px 0 0;
 }
 .press-promo-section .image{
   height: 246px;
@@ -1080,6 +1080,10 @@ section{
 .user-form.light-gray textarea{
   border-color: #5A6570;
 }
+.note{
+  font: normal 14px/18px PTSans;
+  margin: -15px 0;
+}
 /* SLICK-SLIDER */
 .slick-slider{
   position: relative;
@@ -1346,11 +1350,11 @@ section{
 .team-personal-info a{
   text-decoration: none;
 }
-.team-personal-info .icon-instagram img{
+.team-personal-info .icon-linkedin img{
   width: 40px;
   height: 40px;
 }
-.team-personal-info .icon-instagram a:hover{
+.team-personal-info .icon-linkedin a:hover{
   opacity: 0.7;
 }
 .about-section{
@@ -1724,6 +1728,7 @@ section{
 .services-promo-section .image{
   width: 45.8%;
   height: 774px;
+  margin: 0;
 }
 .services-promo-section .image:before{
   content: '';
@@ -1735,8 +1740,12 @@ section{
   background: linear-gradient(270.29deg, #F3F3F3 -0.39%, rgba(243, 243, 243, 0.84) 11.44%, rgba(254, 254, 254, 0.0696805) 39.38%, rgba(255, 255, 255, 0) 56.18%);
 }
 .services-promo-section .text-block{
+  position: static;
   width: 54.2%;
-  order: 0;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .services-promo-section .text-block .text{
   max-width: 660px;
@@ -2211,7 +2220,7 @@ section{
 }
 .promo-slider-section .text-block .text{
   max-width: 540px;
-  margin: 0 0 30px 24px;
+  margin: 0 0 30px;
 }
 .promo-slider-section .text-block p{
   max-width: 100%;
@@ -2352,7 +2361,7 @@ section{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 461px;
+  height: 500px;
   background: #424143;
   overflow: hidden;
 }
@@ -2406,6 +2415,9 @@ section{
 }
 .footer-sections .contacts-info-section .privacy-list{
   display: none;
+}
+.footer-sections .footer-section-text{
+  width: 100%;
 }
 .privacy-list{
   padding: 24px 0;
@@ -2535,6 +2547,23 @@ section{
     min-height: 760px;
   }
 }
+@media (max-width: 1629px) {
+  .promo-section .text-block{
+    position: static;
+    width: 49%;
+    order: -1;
+    display: flex;
+    align-items: center;
+    transform: none;
+  }
+  .index-promo-section .text-block{
+    width: 43.5%;
+  }
+  .services-promo-section .text-block{
+    width: 54.2%;
+    order: 0;
+  }
+}
 @media (max-width: 1429px) {
   .press-section .press-list{
     margin: 0 0 50px;
@@ -2563,9 +2592,6 @@ section{
   }
   .about-team-info{
     padding: 0;
-  }
-  .promo-section .text-block .text{
-    margin-left: 0;
   }
   .index-promo-section .image{
     height: 520px;
@@ -2706,7 +2732,7 @@ section{
   .team-personal-info .phone:before{
     background-size: 23px 28px;
   }
-  .team-personal-info .icon-instagram img {
+  .team-personal-info .icon-linkedin img {
     width: 30px;
     height: 30px;
   }
@@ -2943,6 +2969,7 @@ section{
     line-height: 22px;
   }
   .promo-section .text-block p{
+    max-width: 100%;
     margin: 0 0 20px;
   }
   .services-promo-section .text-block .text {
