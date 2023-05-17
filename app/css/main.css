@@ -761,7 +761,12 @@ section{
 }
 .image-text-section .image,
 .image-text-section .text-block{
-  width: 49%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.image-text-section .text-block{
+  padding: 0 50px;
 }
 .image-text-section .image{
   height: 906px;
@@ -1359,7 +1364,7 @@ section{
   margin: -3px 0 43px;
 }
 .about-section .image-text-section .image{
-  width: 46.8%;
+  width: 50%;
   height: 889px;
 }
 .about-section .image-text-section .text-block .text{
@@ -2671,6 +2676,9 @@ section{
   .image-text-section.image-right .image {
     height: 810px;
   }
+  .image-text-section .text-block{
+    padding: 0 15px;
+  }
   .services-section,
   .services-work-section{
     padding-top: 80px;
@@ -3479,8 +3487,9 @@ section{
     font-size: 16px;
   }
   h1, .h2,
-  h2, .h1{
-    font-size: 27px;
+  h2, .h1,
+  .about-section .image-text-section .h2{
+    font-size: 24px;
     line-height: 34px;
     margin-bottom: 15px;
   }
