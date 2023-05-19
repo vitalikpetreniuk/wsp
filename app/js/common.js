@@ -8,6 +8,7 @@ $(document).ready(function() {
   initSlickSlider2();
   initFullInputUserForm();
   initCountAnimate();
+  initAnchorMenu();
 });
 
 function initFixedHeader() {
@@ -68,7 +69,7 @@ function initSlickSlider2() {
   $('.stock-ticker-slider').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 15000,
+    speed: 25000,
     arrows: false,
     dots: false,
     centerMode: true,
@@ -133,3 +134,16 @@ function initCountAnimate(){
     }
   });
 };
+function initAnchorMenu() {
+  $(".filter-page").on("click","a", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+     top = $(id).offset().top - 180;
+      if($(this).parent().hasClass('active')){
+       return false;
+     }
+     $('.filter-page li').removeClass('active');
+     $(this).parent().addClass('active');
+    $('body,html').animate({scrollTop: top}, 1000);
+  });
+}

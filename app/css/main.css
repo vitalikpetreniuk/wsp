@@ -611,7 +611,7 @@ small{
   padding-top: 130px;
 }
 #main{
-  margin: 0 0 500px;
+  margin: 0 0 640px;
   padding-top: 175px;
   position: relative;
   transition: .2s;
@@ -630,7 +630,8 @@ section{
   position: relative;
 }
 .promo-section .image img,
-.image-text-section .image img{
+.image-text-section .image img,
+.promo-section video{
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -766,7 +767,7 @@ section{
   align-items: center;
 }
 .image-text-section .text-block{
-  padding: 0 50px;
+  padding: 0 100px;
 }
 .image-text-section .image{
   height: 906px;
@@ -982,6 +983,7 @@ section{
 .partners-slider .slick-slide img,
 .stock-ticker-slider .slick-slide img{
   margin: 0 auto;
+  max-height: 150px;
 }
 .contacts-section{
   padding: 126px 0 114px;
@@ -1494,7 +1496,7 @@ section{
   margin: 80px -15px 0;
   list-style: none;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .team-list > li{
   width: 25%;
@@ -1540,6 +1542,7 @@ section{
 .team-list .box-front{
   max-width: 314px;
   height: auto;
+  margin: 0 auto;
 }
 .team-list .box-front{
   background: none;
@@ -2113,7 +2116,8 @@ section{
   height: 22px;
 }
 .post-content{
-  padding-left: 115px;
+  max-width: 1360px;
+  margin: 0 0 0 auto;
 }
 .post-inner{
   position: relative;
@@ -2355,7 +2359,7 @@ section{
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 500px;
+  height: 640px;
   background: #424143;
   overflow: hidden;
 }
@@ -2440,7 +2444,7 @@ section{
   margin: 0 0 9px;
 }
 .email-form .wrap-email-form{
-  max-width: 429px;
+/*   max-width: 429px; */
   position: relative;
 }
 .email-form input{
@@ -2615,9 +2619,6 @@ section{
   .three-columns .text {
     padding: 35px 20px 20px;
   }
-  .post-content {
-    padding-left: 0;
-  }
   .values-block-large .h2{
     font-size: 50px;
     margin: 0 0 30px;
@@ -2741,7 +2742,10 @@ section{
   }
   .team-list > li{
     width: 33.3%;
+  }
+  .team-list .text{
     max-width: 314px;
+    margin: 0 auto;
   }
   .press-list .press-link{
     width: 55%;
@@ -3377,6 +3381,9 @@ section{
   .team-list .wrap-img{
     width: 100%;
     height: auto;
+  }
+  .team-list .text{
+    max-width: 100%;
   }
   .press-list li{
     flex-wrap: wrap;
