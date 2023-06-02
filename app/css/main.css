@@ -287,7 +287,7 @@ input:-webkit-autofill {
 .holder{
   max-width: 1630px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 34px;
 }
 .holder:after{
   display: block;
@@ -611,9 +611,12 @@ small{
   padding-top: 130px;
 }
 #main{
-  margin: 0 0 640px;
+  min-height: 100%;
+  background: #fff;
+  margin: 0 0 540px;
   padding-top: 175px;
   position: relative;
+  z-index: 1;
   transition: .2s;
 }
 section{
@@ -640,7 +643,7 @@ section{
 .image-text-section.image-right .text-block{
   width: 100%;
   max-width: 1630px;
-  padding: 0 15px;
+  padding: 0 34px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -731,10 +734,9 @@ section{
 }
 .boxes-info-list{
   padding: 0;
-  margin: 0 -17px;
+  margin: 0;
   list-style: none;
   flex-wrap: wrap;
-  justify-content: center;
   position: relative;
   top: -64px;
 }
@@ -742,8 +744,7 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 22.54%;
-  margin: 0 17px;
+  width: 24%;
   max-width: 314px;
   min-height: 223px;
   background: #2D3646;
@@ -1176,13 +1177,9 @@ section{
   background: none;
   border: none;
   padding: 0;
-  width: 77px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50px;
+  width: 28px;
+  height: 15px;
   background-repeat: no-repeat;
-  background-size: 26px 14px;
-  background-position: 50% 50%;
   position: absolute;
   bottom: 0;
   transition: .3s;
@@ -1198,7 +1195,7 @@ section{
 }
 .slick-prev:hover,
 .slick-next:hover{
-  background-color: #E6D7CE;
+  opacity: .6;
 }
 .slick-dots {
   display: block;
@@ -1416,7 +1413,7 @@ section{
 }
 .values-block .text{
   width: 46%;
-  padding: 24px 35px 0;
+  padding: 24px 0 0;
   order: -1;
 }
 .values-block.image-left .text{
@@ -1424,6 +1421,13 @@ section{
 }
 .values-block .sub-title{
   margin: 0 0 4px;
+}
+.values-block .btn{
+  min-width: 197px;
+}
+.values-block .btn:hover{
+  background: #fff;
+  color: #2D3646 !important;
 }
 .values-list{
   padding: 0;
@@ -1460,9 +1464,6 @@ section{
 .values-block-large h3{
   font: normal 32px/38px ArgentCF;
   margin: 32px 0;
-}
-.values-block-large .values-block{
-  padding: 0 17px;
 }
 .values-block-large .values-block .text{
   width: 47%;
@@ -1911,16 +1912,15 @@ section{
 }
 .blog-list{
   padding: 0;
-  margin: 89px -17px -5px;
+  margin: 89px -15px -5px;
   list-style: none;
   font: normal 16px/23px PTSans;
   letter-spacing: 0.005em;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.blog-list > li{
-  width: 25%;
-  padding: 0 17px 86px;
+.blog-list .slick-slide{
+  padding: 0 15px;
 }
 .blog-list .image{
   display: block;
@@ -1972,6 +1972,12 @@ section{
 }
 .blog-list .more:hover{
   font-weight: 700;
+}
+.slider .slick-prev,
+.slider .slick-next{
+  top: 50%;
+  transform: translateY(-50%);
+  margin: -125px -30px 0;
 }
 .three-columns-section{
   padding: 91px 0 96px;
@@ -2041,15 +2047,6 @@ section{
 .three-columns .column-box.yellow a:hover{
   border-color: rgba(255,255,255,0);
 }
-#wrapper.aside-sticky{
-  overflow: visible;
-}
-.aside-sticky .content-page{
-  padding: 81px 0;
-}
-.post-section{
-  padding: 0 0 444px;
-}
 .visual{
   color: #fff;
   margin: 0 0 63px;
@@ -2115,12 +2112,30 @@ section{
   width: 22px;
   height: 22px;
 }
-.post-content{
-  max-width: 1360px;
-  margin: 0 0 0 auto;
-}
 .post-inner{
   position: relative;
+}
+.fixed-block{
+  max-width: 1152px;
+  margin: 0 auto;
+}
+.fixed-container{
+  position: relative;
+}
+.fixed-content{
+  width: 60%;
+  padding: 0 0 0 30px;
+}
+.fixed-sidebar.is_stuck{
+  top: 150px !important;
+}
+.fixed-sidebar{
+  position: absolute;
+  top: 0 !important;
+  left: 100%;
+  margin: 0 0 0 -30%;
+  z-index: 9;
+  transition: .2s;
 }
 .aside-info-box{
   width: 429px;
@@ -2131,9 +2146,6 @@ section{
   color: #fff;
   border-radius: 8px;
   padding: 54px 42px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 150px;
 }
 .aside-info-box h3{
   font: normal 48px/58px PTSans;
@@ -2355,11 +2367,11 @@ section{
 }
 /* FOOTER */
 #footer{
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 640px;
+  height: 540px;
   background: #424143;
   overflow: hidden;
 }
@@ -2406,7 +2418,8 @@ section{
 .footer-sections .nav-menu{
   font: 700 15px/19px PTSans;
   letter-spacing: 0.03em;
-  padding: 12px 0 0 117px;
+  padding: 40px 0 0 80px;
+  column-count: 2;
 }
 .footer-sections .nav-menu > li{
   margin: 0 0 26px;
@@ -2416,6 +2429,7 @@ section{
 }
 .footer-sections .footer-section-text{
   width: 100%;
+  padding-top: 24px;
 }
 .privacy-list{
   padding: 24px 0;
@@ -2526,6 +2540,40 @@ section{
 .open-nav{
   overflow: hidden;
 }
+.popup-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+.popup-holder .bg {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, .8);
+}
+.popup{
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%,-50%);
+}
+.popup .aside-info-box{
+  width: 650px;
+}
+.close-popup{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../img/close-popup.svg) no-repeat;
+  width: 15px;
+  height: 15px;
+  text-indent: -9999px;
+}
 @media (prefers-reduced-motion:no-preference){:root{scroll-behavior:auto}}
 @media (min-width: 1679px) {
   .promo-section .image{
@@ -2543,6 +2591,12 @@ section{
   }
   .promo-slider .slick-slide{
     min-height: 760px;
+  }
+}
+@media (max-width: 1669px) {
+  .slider .slick-prev,
+  .slider .slick-next{
+    margin: -125px -15px 0;
   }
 }
 @media (max-width: 1629px) {
@@ -2567,11 +2621,18 @@ section{
   .press-section .press-list{
     margin: 0 0 50px;
   }
+  .box-front,
+  .box-inner{
+    padding: 36px 30px 15px;
+  }
+  .image-text-section .text-block{
+    padding: 0 50px;
+  }
+  .values-block-large .values-block .text{
+    padding-left: 50px;
+  }
 }
 @media (max-width: 1399px) {
-  .boxes-info-list li{
-    margin: 0 14px;
-  }
   .services-section .text,
   .services-work-section .text{
     max-width: 63%;
@@ -2623,6 +2684,9 @@ section{
     font-size: 50px;
     margin: 0 0 30px;
   }
+  .values-block .image{
+    width: 560px;
+  }
 }
 @media (max-width: 1199px) {
   h1, .h2{
@@ -2633,6 +2697,11 @@ section{
     font-size: 42px;
     line-height: 50px;
     margin: 0 0 20px;
+  }
+  .holder,
+  .promo-section .text-block,
+  .image-text-section.image-right .text-block{
+    padding: 0 15px;
   }
   .header-main .logo{
     margin: -17px 0 17px;
@@ -2663,12 +2732,6 @@ section{
   }
   .serve-promo-section .image{
     height: 370px;
-  }
-  .boxes-info-list{
-    margin: 0 -20px;
-  }
-  .boxes-info-list li {
-    margin: 0 10px;
   }
   .image-text-section .image,
   .image-text-section.resources .image{
@@ -2824,7 +2887,7 @@ section{
     max-width: 35%;
   }
   .footer-sections .nav-menu{
-    padding-left: 30%;
+    padding-left: 10%;
   }
   .contacts-phone{
     padding-left: 28px;
@@ -2844,6 +2907,9 @@ section{
   }
   .values-block-large .h2 br{
     display: none;
+  }
+  .slider .slick-prev, .slider .slick-next {
+    margin: -120px 0 0;
   }
 }
 @media (max-width: 1023px) {
@@ -2973,8 +3039,8 @@ section{
   }
   .boxes-info-list li{
     max-width: 100%;
-    width: 46%;
-    margin: 0 10px 20px;
+    width: 49%;
+    margin: 0 0 20px;
   }
   .services-section .text-block,
   .services-work-section .text-block{
@@ -2999,8 +3065,7 @@ section{
   .content-page,
   .values-section,
   .blog-section, 
-  .three-columns-section,
-  .aside-sticky .content-page{
+  .three-columns-section{
     padding: 50px 0;
   }
   .about-team-info .image-block{
@@ -3316,9 +3381,6 @@ section{
   .serve-promo-section .image{
     height: 190px;
   }
-  .boxes-info-list li{
-    width: 43.5%;
-  }
   .image-text-section .text-block, 
   .image-text-section.image-right .text-block{
     padding-bottom: 50px;
@@ -3488,6 +3550,12 @@ section{
   .user-form input[type='submit']{
     max-width: 156px;
   }
+  .slider .slick-prev, .slider .slick-next {
+    margin: -145px 0 0;
+  }
+  .popup .aside-info-box {
+    width: 450px;
+  }
 }
 @media (max-width: 479px) {
   body{
@@ -3519,9 +3587,6 @@ section{
     font-size: 27px;
     line-height: 34px;
     margin-bottom: 15px;
-  }
-  .boxes-info-list {
-    margin: 0 -10px;
   }
   .boxes-info-list li{
     width: 100%;
@@ -3683,5 +3748,11 @@ section{
   .gray-block-section, 
   .contacts-section{
     font-size: 15px;
+  }
+  .slider .slick-prev, .slider .slick-next {
+    margin: -115px 0 0;
+  }
+  .popup .aside-info-box {
+    width: 350px;
   }
 }
