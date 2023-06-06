@@ -185,6 +185,12 @@ function initAnchorMenu() {
 }
 /* POPUP */
 function initPopup(){
+  setTimeout(function() {
+    if (!sessionStorage.getItem('feedbackModal77') && ((location.pathname + location.search) == '/index.php?route=information/information&information_id=9' || (location.pathname + location.search) == '/index.php?route=common/home' || (location.pathname + location.search) == '/')) {
+      $("#feedbackModal77").modal('show');
+      sessionStorage.setItem('feedbackModal77', 1);
+    }
+  }, 10000);
   $('body')
     .popup({
       "opener":".open-popup",
