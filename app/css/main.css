@@ -2116,15 +2116,13 @@ section{
   position: relative;
 }
 .fixed-block{
-  max-width: 1152px;
-  margin: 0 auto;
+  
 }
 .fixed-container{
   position: relative;
 }
 .fixed-content{
   width: 60%;
-  padding: 0 0 0 30px;
 }
 .fixed-sidebar.is_stuck{
   top: 150px !important;
@@ -2132,8 +2130,8 @@ section{
 .fixed-sidebar{
   position: absolute;
   top: 0 !important;
-  left: 100%;
-  margin: 0 0 0 -30%;
+  left: 50%;
+  margin: 0 0 0 300px;
   z-index: 9;
   transition: .2s;
 }
@@ -2179,6 +2177,7 @@ section{
 }
 .post-inner .post{
   max-width: 660px;
+  margin: 0 34px 0 auto;
 }
 .post-inner strong{
   font: 700 24px/30px PTSans;
@@ -2203,9 +2202,10 @@ section{
   margin: 0 0 17px;
 }
 .following-posts{
-  padding: 0;
-  margin: 57px 0;
+  padding: 0 15px;
+  margin: 57px auto;
   list-style: none;
+  max-width: 1152px;
 }
 .following-posts li{
   max-width: 317px;
@@ -2616,6 +2616,9 @@ section{
     width: 54.2%;
     order: 0;
   }
+  .fixed-sidebar{
+    margin: 0 0 0 230px;
+  }
 }
 @media (max-width: 1429px) {
   .press-section .press-list{
@@ -2686,6 +2689,9 @@ section{
   }
   .values-block .image{
     width: 560px;
+  }
+  .fixed-sidebar {
+    margin: 0 0 0 135px;
   }
 }
 @media (max-width: 1199px) {
@@ -2900,7 +2906,13 @@ section{
     transform: rotate(10deg);
   }
   .post-inner .post {
-    max-width: 53%;
+    max-width: 90%;
+    margin: 0;
+  }
+  .fixed-sidebar {
+    left: auto;
+    right: 15px;
+    margin: 0;
   }
   .values-block-large .values-block .text{
     padding: 0 0 0 15px;
@@ -3202,9 +3214,17 @@ section{
     margin: 30px 0;
     text-align: center;
   }
+  .fixed-content,
   .aside-info-box{
-    position: static;
     width: 100%;
+  }
+  .fixed-sidebar{
+    position: static !important;
+    width: 100%;
+    padding: 0 15px;
+  }
+  .fixed-sidebar.is_stuck + div{
+    display: none !important;
   }
   .following-posts{
     margin: 50px 0 0;
